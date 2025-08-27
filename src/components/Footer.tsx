@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Phone, Briefcase } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-400 py-6 mt-10">
+    <footer className="bg-gray-950 text-gray-400 py-6">
       <div className="container mx-auto text-center mb-4">
         © {new Date().getFullYear()} Gerardo. Todos los derechos reservados.
       </div>
