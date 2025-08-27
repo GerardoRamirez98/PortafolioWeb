@@ -14,22 +14,22 @@ export default function ContactPage() {
       <div>
         <h1 className="text-4xl font-bold mb-4">Contacto</h1>
         <p className="text-gray-300 max-w-xl">
-          Si quieres ponerte en contacto conmigo, aquí tienes mis redes y formas de
-          comunicación. No dudes en escribirme para oportunidades, colaboraciones
-          o preguntas.
+          Si quieres ponerte en contacto conmigo, aquí tienes mis redes y formas
+          de comunicación. No dudes en escribirme para oportunidades,
+          colaboraciones o preguntas.
         </p>
       </div>
 
       {/* Lista de enlaces */}
-      <div className="flex flex-wrap justify-center gap-8 text-gray-400">
+      <div className="flex flex-wrap justify-center gap-8">
         {/* GitHub */}
         <a
           href="https://github.com/GerardoRamirez98"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:text-white transition"
+          className="flex flex-col items-center gap-2 transition hover:scale-110"
         >
-          <Github className="w-10 h-10" />
+          <Github className="w-10 h-10 text-gray-800 dark:text-gray-200" />
           <span>GitHub</span>
         </a>
 
@@ -38,9 +38,9 @@ export default function ContactPage() {
           href="https://www.linkedin.com/in/juan-gerardo-tovar-ramirez-b74537265/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:text-white transition"
+          className="flex flex-col items-center gap-2 transition hover:scale-110"
         >
-          <Linkedin className="w-10 h-10" />
+          <Linkedin className="w-10 h-10 text-blue-600" />
           <span>LinkedIn</span>
         </a>
 
@@ -49,18 +49,18 @@ export default function ContactPage() {
           href="https://www.occ.com.mx/curriculo/22209332"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:text-white transition"
+          className="flex flex-col items-center gap-2 transition hover:scale-110"
         >
-          <Briefcase className="w-10 h-10" />
+          <Briefcase className="w-10 h-10 text-yellow-500" />
           <span>Mi CV</span>
         </a>
 
         {/* Correo */}
         <a
           href="mailto:gerardo19980719@gmail.com"
-          className="flex flex-col items-center gap-2 hover:text-white transition"
+          className="flex flex-col items-center gap-2 transition hover:scale-110"
         >
-          <Mail className="w-10 h-10" />
+          <Mail className="w-10 h-10 text-red-500" />
           <span>Email</span>
         </a>
 
@@ -69,9 +69,9 @@ export default function ContactPage() {
           href="https://wa.me/524741005821"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:text-white transition"
+          className="flex flex-col items-center gap-2 transition hover:scale-110"
         >
-          <Phone className="w-10 h-10" />
+          <Phone className="w-10 h-10 text-green-500" />
           <span>WhatsApp</span>
         </a>
       </div>
