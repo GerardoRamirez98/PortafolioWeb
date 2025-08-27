@@ -2,6 +2,7 @@
 // Se encarga de renderizar la página de inicio.
 // Aquí usamos JSX + Tailwind para dar estilos.
 import TrueFocus from "../components/TrueFocus";
+import Marquee from "react-fast-marquee";
 import Image from "next/image"; // 📸 Componente optimizado de Next.js para imágenes
 import {
   FaReact,
@@ -57,55 +58,55 @@ export default function HomePage() {
       {/* 🚀 Tecnologías principales */}
       <div>
         <h2 className="text-2xl font-semibold mb-4">Especializándome en:</h2>
-        <div className="flex gap-6 text-5xl text-blue-400 justify-center">
+        <Marquee speed={80} gradient={false} pauseOnHover={true}>
           <FaReact
             title="React"
-            className="hover:scale-110 transition-transform"
+            className="mx-6 text-5xl hover:scale-110 transition-transform text-blue-400"
           />
           <SiTypescript
             title="TypeScript"
-            className="hover:scale-110 transition-transform text-blue-600"
+            className="mx-6 text-5xl hover:scale-110 transition-transform text-blue-600"
           />
           <SiNextdotjs
             title="Next.js"
-            className="hover:scale-110 transition-transform text-gray-200"
+            className="mx-6 text-5xl hover:scale-110 transition-transform text-gray-200"
           />
           <SiTailwindcss
             title="TailwindCSS"
-            className="hover:scale-110 transition-transform text-cyan-400"
+            className="mx-6 text-5xl hover:scale-110 transition-transform text-cyan-400"
           />
           <SiVite
             title="Vite"
-            className="hover:scale-110 transition-transform text-purple-500"
+            className="mx-6 text-5xl hover:scale-110 transition-transform text-purple-500"
           />
-        </div>
+        </Marquee>
       </div>
 
       {/* 📚 Conocimientos adicionales */}
       <div>
         <h2 className="text-2xl font-semibold mb-4">Conocimientos en:</h2>
-        <div className="flex gap-6 text-4xl text-green-400 justify-center flex-wrap">
+        <Marquee speed={150} gradient={false} pauseOnHover={true}>
           <FaDatabase
             title="SQL Server"
-            className="hover:scale-110 transition-transform text-red-500"
+            className="mx-6 text-4xl hover:scale-110 transition-transform text-red-500"
           />
           <FaNodeJs
             title="Node.js"
-            className="hover:scale-110 transition-transform text-green-500"
+            className="mx-6 text-4xl hover:scale-110 transition-transform text-green-500"
           />
           <FaGitAlt
             title="Git"
-            className="hover:scale-110 transition-transform text-orange-500"
+            className="mx-6 text-4xl hover:scale-110 transition-transform text-orange-500"
           />
           <FaHtml5
             title="HTML"
-            className="hover:scale-110 transition-transform text-red-600"
+            className="mx-6 text-4xl hover:scale-110 transition-transform text-red-600"
           />
           <FaCss3Alt
             title="CSS"
-            className="hover:scale-110 transition-transform text-blue-500"
+            className="mx-6 text-4xl hover:scale-110 transition-transform text-blue-500"
           />
-        </div>
+        </Marquee>
       </div>
     </section>
   );
