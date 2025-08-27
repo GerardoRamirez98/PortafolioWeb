@@ -46,7 +46,7 @@ export default function ContactPage() {
 
         {/* CV */}
         <a
-          href="https://www.occ.com.mx/curriculo/22209332"
+          href="/CV-JuanGerardoTovarRamirez.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-2 transition hover:scale-110"
