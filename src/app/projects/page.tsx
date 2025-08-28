@@ -6,14 +6,15 @@ export default function Projects() {
   const projects = [
     {
       title: "Portafolio Web",
-      description: "Mi sitio personal con React, TypeScript, Next.js y Tailwind.",
+      description:
+        "Mi sitio personal con React, TypeScript, Next.js y Tailwind.",
       image: "/portafolioweb.png", // Guarda en /public
       demo: "https://portafolio-web-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/PortafolioWeb.git",
     },
     {
       title: "App de Notas",
-      description: "CRUD para notas con React y Firebase.",
+      description: " para notas con React y Firebase.",
       image: "/notas.png",
       demo: "https://tu-dominio.vercel.app/notas",
       github: "https://github.com/GerardoRamirez98/app-notas",
@@ -42,7 +43,9 @@ export default function Projects() {
               className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:opacity-80 transition"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center items-center p-6 text-center">
-              <h3 className="text-white text-2xl font-bold mb-2">{project.title}</h3>
+              <h3 className="text-white text-2xl font-bold mb-2">
+                {project.title}
+              </h3>
               <p className="text-gray-200 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <a
