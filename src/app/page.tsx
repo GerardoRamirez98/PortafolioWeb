@@ -59,7 +59,7 @@ export default function HomePage() {
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Especializándome en:
         </h2>
-        <Marquee speed={80} gradient={false} pauseOnHover={true}>
+        <Marquee speed={20} gradient={false} pauseOnHover={true}>
           <FaReact className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-400" />
           <SiTypescript className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-600" />
           <SiNextdotjs className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-gray-200" />
@@ -73,7 +73,7 @@ export default function HomePage() {
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Conocimientos en:
         </h2>
-        <Marquee speed={150} gradient={false} pauseOnHover={true}>
+        <Marquee speed={20} gradient={false} pauseOnHover={true}>
           <FaDatabase className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-red-500" />
           <FaNodeJs className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-green-500" />
           <FaGitAlt className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-orange-500" />
