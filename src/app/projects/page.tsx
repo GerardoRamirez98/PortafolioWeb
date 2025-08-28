@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
+import Image from "next/image";
 
 export default function Projects() {
   const projects = [
@@ -15,7 +16,7 @@ export default function Projects() {
     {
       title: "App de Tareas",
       description:
-        "To-Do App en Next.js + TypeScript + TailwindCSS. Permite agregar, editar, eliminar y marcar tareas como completadas, con persistencia en el navegador. Diseño limpio, interactivo y responsivo.",
+        "To-Do App en Next.js + TypeScript + TailwindCSS.",
       image: "/todo-app.png",
       demo: "https://to-do-app-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/ToDoApp.git",
@@ -38,9 +39,11 @@ export default function Projects() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="relative rounded-2xl shadow-lg overflow-hidden group"
           >
-            <img
+            <Image
               src={project.image}
               alt={project.title}
+              width={500}
+              height={300}
               className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:opacity-80 transition"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center items-center p-6 text-center">
