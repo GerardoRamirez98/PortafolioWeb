@@ -13,11 +13,12 @@ export default function Projects() {
       github: "https://github.com/GerardoRamirez98/PortafolioWeb.git",
     },
     {
-      title: "App de Notas",
-      description: " para notas con React y Firebase.",
-      image: "/notas.png",
-      demo: "https://tu-dominio.vercel.app/notas",
-      github: "https://github.com/GerardoRamirez98/app-notas",
+      title: "App de Tareas",
+      description:
+        "To-Do App en Next.js + TypeScript + TailwindCSS. Permite agregar, editar, eliminar y marcar tareas como completadas, con persistencia en el navegador. Diseño limpio, interactivo y responsivo.",
+      image: "/todo-app.png",
+      demo: "https://to-do-app-gr.vercel.app/",
+      github: "https://github.com/GerardoRamirez98/ToDoApp.git",
     },
   ];
 
