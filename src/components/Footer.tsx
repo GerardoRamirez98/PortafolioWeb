@@ -32,7 +32,7 @@ export default function Footer() {
 
         {/* CV */}
         <a
-          href=""
+          href="/CV-JuanGerardoTovarRamirez.pdf"
           target="_blank"
           rel="noopener noreferrer"
           title="Curriculum Vitae"
