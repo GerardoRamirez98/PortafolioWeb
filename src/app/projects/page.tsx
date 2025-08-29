@@ -1,9 +1,15 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 import Image from "next/image";
+import Modal from "react-modal";
+
+Modal.setAppElement("body"); // Necesario para accesibilidad en Next.js
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState<null | number>(null);
+
   const projects = [
     {
       title: "Portafolio Web",
@@ -15,8 +21,7 @@ export default function Projects() {
     },
     {
       title: "App de Tareas",
-      description:
-        "To-Do App en Next.js + TypeScript + TailwindCSS.",
+      description: "To-Do App en Next.js + TypeScript + TailwindCSS.",
       image: "/todo-app.png",
       demo: "https://to-do-app-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/ToDoApp.git",
@@ -37,7 +42,8 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="relative rounded-2xl shadow-lg overflow-hidden group"
+            className="relative rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
+            onClick={() => setSelectedProject(index)}
           >
             <Image
               src={project.image}
@@ -46,33 +52,60 @@ export default function Projects() {
               height={300}
               className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:opacity-80 transition"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center items-center p-6 text-center">
-              <h3 className="text-white text-2xl font-bold mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-200 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-                >
-                  <Globe className="inline w-5 h-5 mr-1" /> Demo
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition"
-                >
-                  <Github className="inline w-5 h-5 mr-1" /> GitHub
-                </a>
-              </div>
+            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex justify-center items-center text-white font-bold text-xl">
+              Ver más
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Modal */}
+      {selectedProject !== null && (
+        <Modal
+          isOpen={selectedProject !== null}
+          onRequestClose={() => setSelectedProject(null)}
+          className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl max-w-lg mx-auto mt-40 outline-none"
+          overlayClassName="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-start z-50"
+        >
+          <h3 className="text-2xl font-bold mb-4">
+            {projects[selectedProject].title}
+          </h3>
+          <Image
+            src={projects[selectedProject].image}
+            alt={projects[selectedProject].title}
+            width={500}
+            height={300}
+            className="w-full h-48 object-cover rounded-lg mb-4"
+          />
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+            {projects[selectedProject].description}
+          </p>
+          <div className="flex gap-4 justify-center">
+            <a
+              href={projects[selectedProject].demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            >
+              <Globe className="inline w-5 h-5 mr-1" /> Demo
+            </a>
+            <a
+              href={projects[selectedProject].github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition"
+            >
+              <Github className="inline w-5 h-5 mr-1" /> GitHub
+            </a>
+          </div>
+          <button
+            onClick={() => setSelectedProject(null)}
+            className="mt-6 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition w-full"
+          >
+            Cerrar
+          </button>
+        </Modal>
+      )}
     </section>
   );
 }
