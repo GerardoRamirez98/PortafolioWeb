@@ -13,11 +13,11 @@ export default function Projects() {
   const projects = [
     {
       title: "Portafolio Web",
-      description:
-        "Mi sitio personal con React, TypeScript, Next.js y Tailwind.",
-      image: "/portafolioweb.png", // Guarda en /public
+      description: "Mi sitio personal con React, TypeScript, Next.js y Tailwind.",
+      image: "/portafolioweb.png",
       demo: "https://portafolio-web-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/PortafolioWeb.git",
+      tech: ["React", "TypeScript", "Next.js", "TailwindCSS"],
     },
     {
       title: "App de Tareas",
@@ -25,6 +25,7 @@ export default function Projects() {
       image: "/todo-app.png",
       demo: "https://to-do-app-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/ToDoApp.git",
+      tech: ["Next.js", "TypeScript", "TailwindCSS"],
     },
   ];
 
@@ -36,24 +37,44 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="relative rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
+            className="relative rounded-2xl shadow-lg overflow-hidden group cursor-pointer bg-white dark:bg-gray-900"
             onClick={() => setSelectedProject(index)}
           >
+            {/* Imagen */}
             <Image
               src={project.image}
               alt={project.title}
               width={500}
               height={300}
-              className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:opacity-80 transition"
+              className="w-full h-48 sm:h-56 lg:h-64 object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex justify-center items-center text-white font-bold text-xl">
-              Ver más
+
+            {/* Detalles */}
+            <div className="p-4">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                {project.description}
+              </p>
+
+              {/* Pills de tecnologías */}
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
@@ -80,6 +101,7 @@ export default function Projects() {
           <p className="text-gray-700 dark:text-gray-300 mb-6">
             {projects[selectedProject].description}
           </p>
+
           <div className="flex gap-4 justify-center">
             <a
               href={projects[selectedProject].demo}

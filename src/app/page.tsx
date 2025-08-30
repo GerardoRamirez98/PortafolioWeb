@@ -48,37 +48,76 @@ export default function HomePage() {
           />
         </h1>
         <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
-          Ingeniero Informático en formación, apasionado por el desarrollo web
-          moderno. Estoy construyendo mi camino con React, TypeScript y Next.js
-          🚀
+          Ingeniero Informático, apasionado por el desarrollo web moderno. Estoy
+          construyendo mi camino con React, TypeScript y Next.js 🚀
         </p>
       </div>
 
       {/* Tecnologías principales */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full max-w-xl mx-auto">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Especializándome en:
         </h2>
-        <Marquee speed={20} gradient={false} pauseOnHover={true}>
-          <FaReact className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-400" />
-          <SiTypescript className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-600" />
-          <SiNextdotjs className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-gray-200" />
-          <SiTailwindcss className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-cyan-400" />
-          <SiVite className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-purple-500" />
+        <Marquee
+          speed={20}
+          gradient={false}
+          pauseOnHover={true}
+          className="overflow-hidden"
+        >
+          <FaReact
+            title="React"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-400"
+          />
+          <SiTypescript
+            title="TypeScript"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-600"
+          />
+          <SiNextdotjs
+            title="Next.js"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-gray-200"
+          />
+          <SiTailwindcss
+            title="Tailwind CSS"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-cyan-400"
+          />
+          <SiVite
+            title="Vite"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-purple-500"
+          />
         </Marquee>
       </div>
 
       {/* Conocimientos adicionales */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full max-w-xl mx-auto mt-6">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Conocimientos en:
         </h2>
-        <Marquee speed={20} gradient={false} pauseOnHover={true}>
-          <FaDatabase className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-red-500" />
-          <FaNodeJs className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-green-500" />
-          <FaGitAlt className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-orange-500" />
-          <FaHtml5 className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-red-600" />
-          <FaCss3Alt className="mx-2 sm:mx-4 text-2xl sm:text-4xl hover:scale-110 transition-transform text-blue-500" />
+        <Marquee
+          speed={20}
+          gradient={false}
+          pauseOnHover={true}
+          className="overflow-hidden"
+        >
+          <FaDatabase
+            title="SQL Server"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-red-500"
+          />
+          <FaNodeJs
+            title="Node.js"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-green-500"
+          />
+          <FaGitAlt
+            title="Git"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-orange-500"
+          />
+          <FaHtml5
+            title="HTML5"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-red-600"
+          />
+          <FaCss3Alt
+            title="CSS3"
+            className="mx-2 sm:mx-4 text-3xl sm:text-5xl hover:scale-110 transition-transform text-blue-500"
+          />
         </Marquee>
       </div>
     </section>
