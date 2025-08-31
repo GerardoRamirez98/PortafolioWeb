@@ -3,16 +3,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import TextType from "./TextType"; // Ajusta la ruta según tu estructura
+import TextType from "./TextType"; // Ajusta la ruta si tu archivo está en otra carpeta
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  const navItems = [
+    { name: "Inicio", href: "/" },
+    { name: "Proyectos", href: "/projects" },
+    { name: "Sobre mí", href: "/about" },
+    { name: "Contacto", href: "/contact" },
+  ];
 
   return (
     <header className="bg-gray-950 text-white shadow-md sticky top-0 z-50">
       <nav className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo o texto animado */}
-        <h1 className="h-8 overflow-hidden text-2xl font-bold">
+        <h1 className="h-10 overflow-hidden text-2xl font-bold">
           <TextType texts={["Developer Web", "Frontend", "React Vite TS"]} />
         </h1>
 
@@ -21,29 +28,40 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           className="md:hidden text-3xl focus:outline-none"
           aria-label="Abrir menú"
+          aria-expanded={open}
         >
           {open ? <X /> : <Menu />}
         </button>
 
         {/* Menú de escritorio */}
         <ul className="hidden md:flex gap-6 text-lg">
-          <li><Link href="/">Inicio</Link></li>
-          <li><Link href="/projects">Proyectos</Link></li>
-          <li><Link href="/about">Sobre mí</Link></li>
-          <li><Link href="/contact">Contacto</Link></li>
+          {navItems.map((item) => (
+            <li key={item.name}>
+              <Link href={item.href} className="hover:text-yellow-400 transition">
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
 
       {/* Menú desplegable móvil */}
-      {open && (
-        <div className="md:hidden bg-gray-900 px-6 py-4 space-y-4 text-center">
-          <Link href="/" onClick={() => setOpen(false)} className="block">Inicio</Link>
-          <Link href="/projects" onClick={() => setOpen(false)} className="block">Proyectos</Link>
-          <Link href="/about" onClick={() => setOpen(false)} className="block">Sobre mí</Link>
-          <Link href="/contact" onClick={() => setOpen(false)} className="block">Contacto</Link>
-        </div>
-      )}
+      <div
+        className={`md:hidden bg-gray-900 px-6 py-4 space-y-4 text-center transition-all duration-300 ease-in-out overflow-hidden ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        {navItems.map((item) => (
+          <Link
+            key={item.name}
+            href={item.href}
+            onClick={() => setOpen(false)}
+            className="block py-2 hover:text-yellow-400 transition"
+          >
+            {item.name}
+          </Link>
+        ))}
+      </div>
     </header>
   );
 }
-
