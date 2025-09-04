@@ -20,7 +20,7 @@ export default function Header() {
       <nav className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo o texto animado */}
         <h1 className="h-10 overflow-hidden text-2xl font-bold">
-          <TextType texts={["Developer Web", "Frontend", "React Vite TS"]} />
+          <TextType texts={["Web Developer", "Frontend", "React Vite TS"]} />
         </h1>
 
         {/* Botón hamburguesa (solo en móvil) */}
@@ -37,7 +37,10 @@ export default function Header() {
         <ul className="hidden md:flex gap-6 text-lg">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="hover:text-yellow-400 transition">
+              <Link
+                href={item.href}
+                className="hover:text-yellow-400 transition"
+              >
                 {item.name}
               </Link>
             </li>
