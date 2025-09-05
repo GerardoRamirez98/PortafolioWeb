@@ -13,7 +13,8 @@ export default function Projects() {
   const projects = [
     {
       title: "Portafolio Web",
-      description: "Mi sitio personal con React, TypeScript, Next.js y Tailwind.",
+      description:
+        "Mi sitio personal con React, TypeScript, Next.js y Tailwind.",
       image: "/portafolioweb.png",
       demo: "https://portafolio-web-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/PortafolioWeb.git",
@@ -25,7 +26,7 @@ export default function Projects() {
       image: "/todo-app.png",
       demo: "https://to-do-app-gr.vercel.app/",
       github: "https://github.com/GerardoRamirez98/ToDoApp.git",
-      tech: ["Next.js", "TypeScript", "TailwindCSS"],
+      tech: ["React", "TypeScript", "Next.js", "TailwindCSS"],
     },
   ];
 
